@@ -1,6 +1,11 @@
 class Solution {
 public:
     int countSegments(string s) {
-        bool inWord
+        int res = 0;
+        istringstream words(s);
+        string word;
+        while (words >> word) res++;
+
+        return res;
     }
 };
