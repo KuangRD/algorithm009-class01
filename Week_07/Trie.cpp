@@ -1,13 +1,3 @@
-# 学习笔记
-
-
-## 字典树和并查集
-
-### 字典树（Tire）
-前缀树的C++实现(待进一步优化)
-[208. Implement Trie (Prefix Tree)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/)
-
-```cpp
 class TrieNode {
 public:
     bool isEnd;
@@ -73,40 +63,3 @@ private:
  * bool param_2 = obj->search(word);
  * bool param_3 = obj->startsWith(prefix);
  */
-```
-
-使用Tire做[单词搜索2](https://leetcode-cn.com/problems/word-search-ii/)的时间复杂度
-
-```
-O(mn * 26^k *4)? mn 长宽， 4联通，最大26种后续可能性，单词最长为k
-```
-
-### 并查集（Disjoint Set）
-
-* 每类元素均维护一个代表元素；
-
-* 每个元素的都直接或间接指向代表元素，代表元素的代表元素指向它本身；
-
-* 支持创建 查询 插入 合并 路径压缩等操作
-
-## Advanced Search
-
-### 剪枝
-
-终止不必要的、注定失败的、次优的搜索
-
-### 双向BFS
-
-个人认为，速度好于标准的A*(Admissible heuristic带来的估计误差), 但是搜索空间大于A*。
-
-A*的启发函数大于真实值后，速度加快，但是可能不是最优解。
-
-双向BFS的两端都是精确的COST。
-
-### A*
-
-老生常谈的算法了，注意A*的变形。（heuristic策略调整和JPS等方案） tie breaker
-
-## 红黑树 AVL
-
-二叉搜索树限制了子树深度。
