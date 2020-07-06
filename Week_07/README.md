@@ -89,6 +89,38 @@ O(mn * 26^k *4)? mn 长宽， 4联通，最大26种后续可能性，单词最�
 
 * 支持创建 查询 插入 合并 路径压缩等操作
 
+基于课程中Java模板改写C++版本如下
+
+```cpp
+class UnionFind { 
+
+private:    
+	int* parent; 
+
+public:
+    int count = 0;  
+    UnionFind(int n) { 
+		count = n; 
+		parent = new int[n]; 
+		for (int i = 0; i < n; i++) parent[i] = i;
+	} 
+	
+    int find(int p) { 
+		while (p != parent[p]) p = parent[p]; 
+		return p; 
+	}
+	
+    void union_set(int p, int q) { 
+		int rootP = find(p); 
+		int rootQ = find(q); 
+		if (rootP == rootQ) return; 
+		parent[rootP] = rootQ; 
+		count--;
+    }
+};
+
+```
+
 ## Advanced Search
 
 ### 剪枝
