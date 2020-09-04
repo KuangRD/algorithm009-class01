@@ -6,6 +6,9 @@
 
 [C++ Array Source Code(GNU)](https://gcc.gnu.org/onlinedocs/gcc-4.6.3/libstdc++/api/a00752_source.html)
 
+[开源SGI STL注释](https://github.com/steveLauwh/SGI-STL)
+
+侯捷SGI STL源码注释（尚未找到）
 
 ### Linked List
 
