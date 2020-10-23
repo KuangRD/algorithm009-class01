@@ -62,6 +62,14 @@ public:
 
 应用： Priority Queue
 
+#### 4. 图 Graph
+
+V - vertex:点
+1, 度 degree 入度和出度
+2, 点与点之间，连通与否
+
+E - Edge: 边
+
 ## HomeWork 
 
 * 写一个关于 HashMap 的小总结。
