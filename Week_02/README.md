@@ -62,6 +62,11 @@ public:
 
 应用： Priority Queue
 
+实战例题
+
+最小的 k 个数（字节跳动在半年内面试中考过）
+滑动窗口最大值（亚马逊在半年内面试中常考）
+
 #### 4. 图 Graph
 
 V - vertex:点
@@ -69,6 +74,64 @@ V - vertex:点
 2, 点与点之间，连通与否
 
 E - Edge: 边
+1, 有向和无向
+2, 权重
+
+表示方法
+
+邻接矩阵(Adjacency matrix)
+
+邻接表(Adjacency list)
+
+图中用BFS和DFS需加visited集合（可能存在环路）。
+
+图的DFS
+
+```py
+visited = set()
+
+def dfs(node, vistied):
+    if node in vistied:
+        return
+
+    vistied.add(node)
+
+    # process current node
+    ...
+
+    for next_node in node.children():
+        if not next_node in vistied:
+            dfs(next_node, visted)
+
+```
+
+图的BFS
+
+```py 
+def BFS(graph, start, end):
+    queue = []
+    queue.append([start])
+
+    visited = set()
+
+    while queue:
+        node = queue.pop()
+        visited.add(node)
+
+        process(node)
+        nodes = generate_related_nodes(node)
+        queue.push(nodes)
+```
+
+连通图个数： https://leetcode-cn.com/problems/number-of-islands/
+
+拓扑排序（Topological Sorting）： https://zhuanlan.zhihu.com/p/34871092
+
+最短路径（Shortest Path）：Dijkstra https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158
+
+最小生成树（Minimum Spanning Tree）： https://www.bilibili.com/video/av84820276?from=search&seid=17476598104352152051
+
+
 
 ## HomeWork 
 

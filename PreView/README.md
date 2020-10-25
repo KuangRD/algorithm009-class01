@@ -33,3 +33,15 @@
     Dependency inversion
 
 [10 tips to be productive in CLion, a cross-platform C/C++ IDE](http://www.cplusplus.com/articles/L0pk4iN6/)
+
+五步刷题法
+
+四步做题
+
+1. 审题 Clarifaction 题目细节，输入输出，输入特例；
+
+2. 所有解法，自己过一遍，时间和空间复杂度，和面试官探讨确认最优解；
+
+3. 写代码
+
+4. 测试样例， 正常测试、边界条件、变态输入、错误输入
