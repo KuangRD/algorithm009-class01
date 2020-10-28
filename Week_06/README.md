@@ -1,8 +1,10 @@
 # 学习笔记
 
-动态规划(不是规划) Dynamic Programming
+动态规划(不是规划) [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming)
 
-Divide & Conquer + 最优子结构
+"Simplifying a complicated problem by breaking it down into simpler sub-problems"(in a recursive manner)
+
+Divide & Conquer + Optimal substructure(最优子结构)
 
 ## 关键点
 
