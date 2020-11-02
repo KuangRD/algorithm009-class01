@@ -299,6 +299,9 @@ private:
 
 ## Advanced Search
 
+[AlphaZero Explained](https://nikcheerla.github.io/deeplearningschool/2018/01/01/AlphaZero-Explained/)
+
+[棋类复杂度](https://en.wikipedia.org/wiki/Game_complexity)
 ### 剪枝
 
 终止不必要的、注定失败的、次优的搜索
@@ -315,9 +318,118 @@ A*的启发函数大于真实值后，速度加快，但是可能不是最优解
 
 老生常谈的算法了，注意A*的变形。（heuristic策略调整和JPS等方案） tie breaker
 
+connections高性能python数据结构库
+
+[相似度测量方法](https://dataaspirant.com/five-most-popular-similarity-measures-implementation-in-python/)
+
+[二进制矩阵中的最短路径的 A* 解法](https://leetcode.com/problems/shortest-path-in-binary-matrix/discuss/313347/A*-search-in-Python)
+
+[8 puzzles 解法比较](https://zxi.mytechroad.com/blog/searching/8-puzzles-bidirectional-astar-vs-bidirectional-bfs/)
+
+```py
+# Python
+def AstarSearch(graph, start, end):
+	pq = collections.priority_queue() # 优先级 —> 估价函数
+	pq.append([start]) 
+	visited.add(start)
+	while pq: 
+		node = pq.pop() # can we add more intelligence here ?
+		visited.add(node)
+		process(node) 
+		nodes = generate_related_nodes(node) 
+   unvisited = [node for node in nodes if node not in visited]
+		pq.push(unvisited)
+```
+
+```C++
+class Node {
+public:
+    int x;
+    int y;
+    bool operator< (const Node &A) {
+        // 
+    }
+};
+
+void generate_related_nodes(Node &node) {
+    // 
+}
+
+void process(Node &node) {
+    // 
+}
+
+void AstarSearch(vector<vector<int>>& graph, Node& start, Node& end) {
+    vector<vector<bool> > visited(graph.size(), vector<bool>(graph[0].size(), false));
+    priority_queue<Node> q;
+    q.push(start);
+
+    while (!q.empty()) {
+        Node cur = q.top();
+        q.pop();
+        visited[cur.x][cur.y] = true;
+
+
+        process(node);
+        vector<Node> nodes = generate_related_nodes(node) 
+        for (auto node : nodes) {
+            if (!visited[node.x][node.y]) q.push(node);
+        }
+    }
+
+    return ;
+}
+
+```
+
 ## 红黑树 AVL
 
 二叉搜索树限制了子树深度。
+
+BST增删查找操作的 实现
+
+[平衡树](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree)
+
+面试重点 红黑树 AVL
+
+掌握重点 2-3 tree, AVL tree, B-tree, Red-black tree
+
+### AVL
+
+平衡二叉树
+
+* Balance Factor(平衡因子)
+
+* 每个结点记录左右子树高度差(平衡因子)
+
+* 四种旋转操作 左旋 优旋 左右旋 右左旋, 来保证增删查改后的平衡因子
+
+不足：结点需要存储平衡因子，且调整次数频繁。
+
+### 红黑树
+
+近似平衡二叉树，任何结点左右子树高度差小于两倍。
+
+* 结点颜色红或黑
+
+* 根结点是黑
+
+* 叶节点(NIL结点，空结点)是黑色的。
+
+* 不能有相邻接的两个红色结点
+
+* 任一结点到其每个叶子的所有路径都包含相同数目的黑色结点。
+
+后两条保证高度差小于两倍。
+
+对比见课件
+
+![alt test][image1]
+
+
+[//]: # (Image References)
+
+[image1]: ./pic/snip.png
 
 实战题目
 
@@ -329,3 +441,35 @@ A*的启发函数大于真实值后，速度加快，但是可能不是最优解
 朋友圈（亚马逊、Facebook、字节跳动在半年内面试中考过）
 岛屿数量（近半年内，亚马逊在面试中考查此题达到 361 次）
 被围绕的区域（亚马逊、eBay、谷歌在半年内面试中考过）
+
+爬楼梯（阿里巴巴、腾讯、字节跳动在半年内面试常考）
+括号生成（亚马逊、Facebook、字节跳动在半年内面试中考过）
+N 皇后（亚马逊、苹果、字节跳动在半年内面试中考过）
+有效的数独（亚马逊、苹果、微软在半年内面试中考过）
+解数独（亚马逊、华为、微软在半年内面试中考过）
+
+单词接龙（亚马逊、Facebook、谷歌在半年内面试中考过）
+最小基因变化（谷歌、Twitter、腾讯在半年内面试中考过）
+
+二进制矩阵中的最短路径（亚马逊、字节跳动、Facebook 在半年内面试中考过）
+滑动谜题（微软、谷歌、Facebook 在半年内面试中考过）
+解数独（微软、华为、亚马逊在半年内面试中考过）
+
+Homework
+
+本周作业
+简单
+爬楼梯（阿里巴巴、腾讯、字节跳动在半年内面试常考）
+中等
+实现 Trie (前缀树) （亚马逊、微软、谷歌在半年内面试中考过）
+朋友圈（亚马逊、Facebook、字节跳动在半年内面试中考过）
+岛屿数量（近半年内，亚马逊在面试中考查此题达到 361 次）
+被围绕的区域（亚马逊、eBay、谷歌在半年内面试中考过）
+有效的数独（亚马逊、苹果、微软在半年内面试中考过）
+括号生成（亚马逊、Facebook、字节跳动在半年内面试中考过）
+单词接龙（亚马逊、Facebook、谷歌在半年内面试中考过）
+最小基因变化（谷歌、Twitter、腾讯在半年内面试中考过）
+困难
+单词搜索 II （亚马逊、微软、苹果在半年内面试中考过）
+N 皇后（亚马逊、苹果、字节跳动在半年内面试中考过）
+解数独（亚马逊、华为、微软在半年内面试中考过）
